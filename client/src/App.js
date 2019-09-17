@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import HelloWorld from './components/HelloWorld.js'
+import { Loop, Stage } from 'react-game-kit';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Switch>
-          <Route exact path="/" component={HelloWorld}/>
-        </Switch>
-      </Router>
+      <Loop>
+        <Stage>
+          <World>
+            <Body>
+              
+            </Body>
+          </World>
+        </Stage>
+      </Loop>  
     </div>
   );
 }
