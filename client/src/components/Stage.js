@@ -12,7 +12,7 @@ class Stage extends Component {
         //create a 2d canvas
         const canvas = this.refs.canvas;
         const ctx = canvas.getContext('2d');
-        ctx.fillRect(0,0,100,100);
+        ctx.fillRect(0,0,200,200);
     }
 
     render() {
