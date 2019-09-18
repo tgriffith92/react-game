@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
-const player = {
-    positionX: '',
-    positionY: '',
-    width: '',
-    height: ''
+const player = (width, height, color, positionX, positionY) => {
+    this.width = width;
+    this.height = height;
+    this.color = color;
+    this.positionX = positionX;
+    this.positionY = positionY;
 }
 
 const walls = [

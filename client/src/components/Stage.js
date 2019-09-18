@@ -12,7 +12,7 @@ class Stage extends Component {
     render() {
         return (
             //Give canvas the specified style
-            <canvas ref="canvas" style={canvasStyle}></canvas>
+            <canvas style={canvasStyle}></canvas>
         )
     }
 
