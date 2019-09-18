@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Game from './components/Game';
+import Loop from './components/Loop';
 
 class App extends Component {
 
@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div>
         
-          <Game />
+         <Loop />
         
       </div>
       
