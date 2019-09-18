@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Loop from './components/Loop';
+import Player from './components/Player'
 
 class App extends Component {
 
@@ -8,7 +9,7 @@ class App extends Component {
       <div>
         
          <Loop />
-        
+        <Player />
       </div>
       
     );

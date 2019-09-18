@@ -6,9 +6,6 @@ const canvasStyle = {
     height: 800
 }
 
-
-
-
 class Stage extends Component {
 
     componentDidMount() {
