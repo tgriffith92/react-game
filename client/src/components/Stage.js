@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 //Set the canvas style
 const canvasStyle = {
-    width: 3200,
-    height: 400,
+    width: 1024,
+    height: 576,
     background: 'black'
 }
 
