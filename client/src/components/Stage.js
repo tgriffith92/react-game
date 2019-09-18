@@ -3,17 +3,11 @@ import React, {Component} from 'react';
 //Set the canvas style
 const canvasStyle = {
     width: 640,
-    height: 800
+    height: 800,
+    background: 'black'
 }
 
 class Stage extends Component {
-
-    componentDidMount() {
-        //create a 2d canvas
-        const canvas = this.refs.canvas;
-        const ctx = canvas.getContext('2d');
-        ctx.fillRect(0,0,200,200);
-    }
 
     render() {
         return (
