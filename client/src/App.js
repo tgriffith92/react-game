@@ -4,16 +4,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Loop>
-        <Stage>
-          <World>
-            <Body>
-              
-            </Body>
-          </World>
-        </Stage>
-      </Loop>  
+    <div>
+      <Game />
     </div>
   );
 }
