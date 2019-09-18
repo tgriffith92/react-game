@@ -7,8 +7,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-         <Loop />
         <Player />
       </div>
       
