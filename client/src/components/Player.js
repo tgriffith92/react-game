@@ -1,26 +1,18 @@
 import React, {Component} from 'react';
 
-const player = (width, height, color, positionX, positionY) => {
-    this.width = width;
-    this.height = height;
-    this.color = color;
-    this.positionX = positionX;
-    this.positionY = positionY;
-}
+const canvas = document.getElementById('screen');
 
-const walls = [
-    {
-        x: '',
-        y: '',
-        width: '',
-        height: ''
-    }
-]
+let ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'green';
+ctx.fillRect(0,0, 20, 20);
 
 class Player extends Component {
     render() {
         return (
-            <div>Test</div>
+            <div>
+        
+            </div>
         )
     }
 }

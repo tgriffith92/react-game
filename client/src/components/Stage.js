@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Player from './Player';
 
 //Set the canvas style
 const canvasStyle = {
@@ -12,7 +13,9 @@ class Stage extends Component {
     render() {
         return (
             //Give canvas the specified style
-            <canvas style={canvasStyle}></canvas>
+            <canvas id="screen" style={canvasStyle}>
+                
+            </canvas>
         )
     }
 
