@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-class Loop extends Component {
+class Landing extends Component {
 
     render() {
         return (
@@ -14,4 +14,4 @@ class Loop extends Component {
 
 }
 
-export default Loop;
+export default Landing;
