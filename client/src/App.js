@@ -1,71 +1,70 @@
-import React, {Component} from 'react';
-import Landing from './components/Landing';
-import PlayerInput from './components/PlayerInput';
+import React, { Component } from 'react';
 import './App.css';
 
-const width = 800;
-const height = window.innerHeight;
-const ratio = window.devicePixelRatio || 1;
+const renderPlayer = (player, handleKeyPress) => (
+  <div 
+    className="player"
+    style={player.position}
+  > 
+  </div>
+)
 
-const game = {
-  start: 0,
-  play: 1,
-  end: 2
+const renderEnemy = (enemy) => {
+
 }
 
 class App extends Component {
 
-  constructor() {
-    super(); 
-      this.state = {
-        input: new PlayerInput(), 
-         screen: {
-           width: width,
-           height: height,
-           ratio: ratio
-         },
-         gameState: game.start
-       }
-  }
-
-  update() {
-    const keys = this.state.input.pressed;
-
-    if(this.state.gameState === game.start && keys.enter) {
-      this.start();
+  state = {
+    player: {
+      position: {
+        top: 0,
+        left: 0,
+      }
     }
-
-    requestAnimationFrame(()=> {this.update()});
   }
 
-  start(){
-    this.setState({
-      gameState: game.play
-    })
+  movePlayer (dx, dy) {
+    let player = {...this.state.player};
+
+    player.position = {
+      top:  dy+player.position.top,
+      left: dx+player.position.left
+    };
+
+    this.setState({ player })
   }
 
   componentDidMount() {
-    this.state.input.bindKeys();
-    requestAnimationFrame(()=> {this.update()});
+    document.addEventListener('keydown', this.handleKeyPress)
   }
 
-  componentWillUnmount() {
-    this.state.input.unbindKeys();
+  speed = 30
+
+  handleKeyPress = (evnt) => {
+    console.log('foo', evnt.key)
+    switch(evnt.key){
+      case "ArrowLeft":
+        this.movePlayer(-1*this.speed, 0)
+        break;
+
+      case "ArrowUp":
+        this.movePlayer(0, -1*this.speed)
+        break;
+
+      case "ArrowRight":
+        this.movePlayer(this.speed, 0)
+        break;
+
+      case "ArrowDown":
+        this.movePlayer(0, this.speed)
+        break;
+    }
   }
 
   render() {
-    return (
-      <div>
-        { this.state.gameState === game.start && <Landing />}
-        
-        <canvas ref="canvas" 
-          width={this.state.screen.width * this.state.screen.ratio} 
-          height={this.state.screen.height * this.state.screen.ratio}>
 
-        </canvas>
-      </div>
-      
-    );
+    return renderPlayer(this.state.player)
   }
 }
 

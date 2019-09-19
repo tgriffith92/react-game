@@ -45,7 +45,6 @@ class PlayerInput extends Component {
                 keys.enter = value;   
                 break; 
         }
-        this.pressed = keys;
     }
     render() {
         return (

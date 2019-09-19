@@ -57,3 +57,10 @@ canvas {
     transform: rotate(360deg);
   }
 }
+
+.player {
+  height: 100px;
+  width : 100px;
+  background-image: url('/client/public/images/greenPlayer.png');
+  position: absolute;
+}
