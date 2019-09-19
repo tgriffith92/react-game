@@ -39,8 +39,14 @@ canvas {
 
 .title {
   top: 20%;
-  font-size: 15px;
+  font-size: 60px;
   color: #ff0000;
+}
+
+.instruct {
+  top: 40%;
+  font-size: 25px;
+  color: #ffff00;
 }
 
 @keyframes App-logo-spin {
