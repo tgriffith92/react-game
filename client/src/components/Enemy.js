@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
-const renderPlayer = (player) => (
+const renderEnemy = (enemy) => (
   <div 
-    className="player"
-    style={player.position}
+    className="enemy"
+    style={enemy.position}
   > 
   </div>
 )
@@ -11,7 +11,7 @@ const renderPlayer = (player) => (
 class Enemy extends Component {
 
   state = {
-    player: {
+    enemy: {
       position: {
         top: 0,
         left: 0,
@@ -22,7 +22,7 @@ class Enemy extends Component {
 
   render() {
 
-    return renderPlayer(this.state.player)
+    return renderEnemy(this.state.enemy)
   }
 }
 
