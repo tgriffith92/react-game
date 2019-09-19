@@ -23,30 +23,26 @@
   color: #61dafb;
 }
 
-canvas {
-  display: block;
-  background-color: #000000;
+.container {
+  height: 70vh;
+  width: 50vw;
+  background-color: black;
+  position: relative;
   margin: 0 auto;
 }
 
-.container {
-  text-align: center;
-  display: block;
+.player {
+  height: 50px;
+  width : 50px;
+  background-color: blue;
   position: absolute;
-  z-index: 1000;
-  width: 100%
 }
 
-.title {
-  top: 20%;
-  font-size: 60px;
-  color: #ff0000;
-}
-
-.instruct {
-  top: 40%;
-  font-size: 25px;
-  color: #ffff00;
+.enemy {
+  height: 50px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
 }
 
 @keyframes App-logo-spin {
@@ -56,11 +52,4 @@ canvas {
   to {
     transform: rotate(360deg);
   }
-}
-
-.player {
-  height: 100px;
-  width : 100px;
-  background-image: url('/client/public/images/greenPlayer.png');
-  position: absolute;
 }
