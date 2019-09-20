@@ -73,33 +73,39 @@ class Player extends Component {
 
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeyPress)
+        this.timerId = setInterval(() => this.onTick(), 100)
     }
 
-    
 
-    shootMissiles = () => {
-        
+    playerSpeed = 30
+    missleSpeed = 10
+
+    moveMissiles() {
+        const missiles = this.state.missiles.map(({top, left}) => ({left, top: top-this.missleSpeed}))
+        this.setState({missiles})
     }
 
-    speed = 30
+    onTick() {
+        this.moveMissiles()
+    }
 
     handleKeyPress = (evnt) => {
         //move the player in the proper direction by 30px
         switch (evnt.code) {
             case "ArrowLeft":
-                this.movePlayer(-1 * this.speed, 0)
+                this.movePlayer(-1 * this.playerSpeed, 0)
                 break;
 
             case "ArrowUp":
-                this.movePlayer(0, -1 * this.speed)
+                this.movePlayer(0, -1 * this.playerSpeed)
                 break;
 
             case "ArrowRight":
-                this.movePlayer(this.speed, 0)
+                this.movePlayer(this.playerSpeed, 0)
                 break;
 
             case "ArrowDown":
-                this.movePlayer(0, this.speed)
+                this.movePlayer(0, this.playerSpeed)
                 break;
             case "Space":
                     this.setState({ 
