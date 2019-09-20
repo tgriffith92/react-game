@@ -8,6 +8,8 @@ const renderPlayer = (player, handleKeyPress) => (
     </div>
   )
   
+let missiles = []
+
   class Player extends Component {
   //set the position of the player
     state = {
@@ -34,11 +36,13 @@ const renderPlayer = (player, handleKeyPress) => (
       document.addEventListener('keydown', this.handleKeyPress)
     }
   
+    
+
     speed = 30
   
     handleKeyPress = (evnt) => {
       //move the player in the proper direction by 30px
-        switch(evnt.key){
+        switch(evnt.code){
             case "ArrowLeft":
               this.movePlayer(-1*this.speed, 0)
               break;
@@ -53,6 +57,13 @@ const renderPlayer = (player, handleKeyPress) => (
       
             case "ArrowDown":
               this.movePlayer(0, this.speed)
+              break;
+            case "Space":
+                missiles.push({
+                    top:  this.state.player.position.top,
+                    left: 15+this.state.player.position.left
+                })
+                console.log("Shooting", missiles)
               break;
           }
     
