@@ -1,14 +1,23 @@
 import React, {Component} from 'react';
 
-const renderPlayer = (player, handleKeyPress) => (
-    <div 
+const renderPlayer = (player,missile) => (
+    <div>
+        <div 
       className="player"
       style={player.position}
     > 
     </div>
+    <div 
+      className="missile"
+      style={missile.position}
+    > 
+        
+    </div>
+    </div>
+    
   )
   
-let missiles = []
+
 
   class Player extends Component {
   //set the position of the player
@@ -18,6 +27,13 @@ let missiles = []
           top: 650,
           left: 350,
         }
+      },
+      missiles: [],
+      missile: {
+        position: {
+            top: 500,
+            left: 500,
+          }
       }
     }
   
@@ -59,11 +75,11 @@ let missiles = []
               this.movePlayer(0, this.speed)
               break;
             case "Space":
-                missiles.push({
+                this.state.missiles.push({
                     top:  this.state.player.position.top,
-                    left: 15+this.state.player.position.left
+                    left: 30+this.state.player.position.left
                 })
-                console.log("Shooting", missiles)
+                console.log("Shooting", this.state.missiles)
               break;
           }
     
@@ -72,7 +88,10 @@ let missiles = []
   
     render() {
   
-      return renderPlayer(this.state.player)
+      return (
+          renderPlayer(this.state.player, this.state.missile)
+          
+      )
     }
   }
 
