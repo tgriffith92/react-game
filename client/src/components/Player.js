@@ -9,12 +9,7 @@ const renderPlayer = (player) => (
             style={player.position}
         >
         </div>
-        {/* <div 
-            className="missile"
-            style={missile.position}
-        > 
-            
-        </div> */}
+
     </div>
 
 )
@@ -50,13 +45,7 @@ class Player extends Component {
                 left: 350,
             }
         },
-        missiles: [],
-        //   missile: {
-        //     position: {
-        //         top: 500,
-        //         left: 500,
-        //       }
-        //   }
+        missiles: []
     }
 
     movePlayer(dx, dy) {
@@ -87,6 +76,10 @@ class Player extends Component {
 
     onTick() {
         this.moveMissiles()
+    }
+
+    topOfScreen() {
+        
     }
 
     handleKeyPress = (evnt) => {
