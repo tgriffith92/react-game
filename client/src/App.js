@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Player from './components/Player';
-import { GameEngine } from 'react-game-engine';
 import './App.css';
 
 

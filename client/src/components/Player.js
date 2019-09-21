@@ -10,15 +10,62 @@ const renderPlayer = (player) => (
 
 )
 
-const renderEnemy = (enemy) => (
-    <div
-        className="enemy"
-        style={enemy.position}
-    >
+const renderEnemy = (enemy, enemy2) => (
+    <div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy.position}
+        >
+        </div>
     </div>
 )
 
-const renderMissile = (missile) => ( 
+const renderMissile = (missile) => (
     <div
         className="missile"
         style={missile}
@@ -49,12 +96,109 @@ class Player extends Component {
             }
         },
         missiles: [],
+
         enemy: {
             position: {
                 top: 0,
                 left: 0
             }
+        },
+        enemy2: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy3: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy4: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy5: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy6: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy7: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy8: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy9: {
+            position: {
+                top: 0,
+                left: 0
+            }
+        },
+        enemy10: {
+            position: {
+                top: 0,
+                left: 0
+            }
         }
+        // enemy: [
+        //     {
+        //         top: 50,
+        //         left: 100
+        //     },
+        //     {
+        //         top: 50,
+        //         left: 150
+        //     },
+        //     {
+        //         top: 50,
+        //         left: 200
+        //     },
+        //     {
+        //         top: 50,
+        //         left: 250
+        //     },
+        //     {
+        //         top: 50,
+        //         left: 300
+        //     },
+        //     {
+        //         top: 100,
+        //         left: 200
+        //     },
+        //     {
+        //         top: 100,
+        //         left: 250
+        //     },
+        //     {
+        //         top: 100,
+        //         left: 300
+        //     },
+        //     {
+        //         top: 100,
+        //         left: 350
+        //     },
+        //     {
+        //         top: 100,
+        //         left: 400
+        //     }
+        // ]
     }
 
     movePlayer(dx, dy) {
@@ -78,7 +222,7 @@ class Player extends Component {
     // }
 
     stopGame() {
-         clearInterval(this.timerId)
+        clearInterval(this.timerId)
     }
 
     playerSpeed = 30
