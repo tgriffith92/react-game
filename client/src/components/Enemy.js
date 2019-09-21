@@ -80,12 +80,20 @@ class Enemy extends Component {
     ]
   }
 
-  enemySpeed = 5;
+  // componentDidMount() {
+  //   this.timerId = setInterval(() => this.onTick(), 1000)
+  // }
 
-  moveEnemies() {
-    const enemy = this.state.enemy.map(({top, left}) => ({left, top: top+this.enemySpeed}))
-    this.setState({enemy})
-}
+  // enemySpeed = 5;
+
+  // moveEnemies() {
+  //   const enemy = this.state.enemy.map(({ top, left }) => ({ left, top: top + this.enemySpeed }))
+  //   this.setState({ enemy })
+  // }
+
+  // onTick() {
+  //   this.moveEnemies()
+  // }
 
   render() {
 

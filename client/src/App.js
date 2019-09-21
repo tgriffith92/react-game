@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Player from './components/Player';
-import Enemy from './components/Enemy';
+import { GameEngine } from 'react-game-engine';
 import './App.css';
 
 
@@ -10,7 +10,6 @@ class App extends Component {
     return(
         <div className="container">
           <Player />
-          <Enemy />
         </div>
       
     )
