@@ -15,7 +15,7 @@ const express = require('express')
  * controller you need.
  * 
  */
-const templateApi = require('../models/template.js')
+const playerApi = require('../models/playerInfo.js')
 
 /* Step 3 
  * 
@@ -25,19 +25,21 @@ const templateApi = require('../models/template.js')
  * TODO: rename this from templateRouter to something that makes sense. (e.g:
  * `shopRouter`)
  */
-const templateRouter = express.Router()
+const playerRouter = express.Router()
 
 /* Step 4
  * 
  * TODO: Put all request handlers here
  */
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
-templateRouter.get('/', (req, res) => {
-  res.json(templateApi.getHelloWorldString())
+playerRouter.get('/', (req,res) => {
+    playerApi.getPlayerInfo()
+        .then(playerInfo => res.send(playerInfo))
+})
+
+playerRouter.post('/', (req,res) => {
+    playerApi.addPlayerInfo(req.body)
+        .then(() => res.sendStatus(200))
 })
 
 /* Step 6
@@ -46,5 +48,5 @@ templateRouter.get('/', (req, res) => {
  *
  */
 module.exports = {
-  templateRouter
+  playerRouter
 }
