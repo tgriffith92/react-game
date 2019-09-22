@@ -10,60 +10,76 @@ const renderPlayer = (player) => (
 
 )
 
-const renderEnemy = (enemy, enemy2) => (
-    <div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
-        <div
-            className="enemy"
-            style={enemy.position}
-        >
-        </div>
+const renderEnemy = (enemy) => (
+    <div
+        className="enemy"
+        style={enemy.position}>
     </div>
 )
+
+const multipleEnemies = (enemy) => {
+    document.getElementsByClassName('enemy').innerHTML = ""
+    for (let i = 0; i < enemy.length; i++) {
+        document.getElementsByClassName('enemy').innerHTML +=
+            `<div class='enemy' style='left:${enemy[i].left}px; 
+        top:${enemy[i].top}px'></div>`
+    }
+}
+
+// const renderEnemy = (enemy) => (
+//     <div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//         <div
+//             className="enemy"
+//             style={enemy.position}
+//         >
+//         </div>
+//     </div>
+// )
 
 const renderMissile = (missile) => (
     <div
@@ -157,48 +173,6 @@ class Player extends Component {
                 left: 0
             }
         }
-        // enemy: [
-        //     {
-        //         top: 50,
-        //         left: 100
-        //     },
-        //     {
-        //         top: 50,
-        //         left: 150
-        //     },
-        //     {
-        //         top: 50,
-        //         left: 200
-        //     },
-        //     {
-        //         top: 50,
-        //         left: 250
-        //     },
-        //     {
-        //         top: 50,
-        //         left: 300
-        //     },
-        //     {
-        //         top: 100,
-        //         left: 200
-        //     },
-        //     {
-        //         top: 100,
-        //         left: 250
-        //     },
-        //     {
-        //         top: 100,
-        //         left: 300
-        //     },
-        //     {
-        //         top: 100,
-        //         left: 350
-        //     },
-        //     {
-        //         top: 100,
-        //         left: 400
-        //     }
-        // ]
     }
 
     movePlayer(dx, dy) {
