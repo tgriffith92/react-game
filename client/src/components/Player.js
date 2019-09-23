@@ -191,6 +191,18 @@ class Player extends Component {
         this.timerId = setInterval(() => this.onTick(), 100)
     }
 
+    getAllPlayers = () =>
+        fetch('/api/players')
+            .then(res => res.json())
+
+    savePlayer = (newPlayer) =>
+        fetch('/api/players',
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(newPlayer)
+            })
+
     // componentWillUnmount() {
     //     clearInterval(this.timerId)
     // }

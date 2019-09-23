@@ -52,9 +52,9 @@ playerRouter.post('/', (req, res) => {
 
 playerRouter.delete('/:playerId', (req, res) => {
     playerApi.deletePlayer(req.params.playerId)
-    .then(() => {
-        res.redirect('/')
-    })
+        .then(() => {
+            res.redirect('/')
+        })
 })
 
 /* Step 5
