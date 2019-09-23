@@ -264,11 +264,11 @@ class Player extends Component {
     moveEnemies() {
         const enemy = this.state.enemy.map(({ top, left }) => ({ left, top: top + this.enemySpeed }))
         this.setState({ enemy })
-        console.log(enemy)
+        
     }
 
     onTick() {
-        this.moveEnemies()
+        this.moveMissiles()
     }
 
     handleKeyPress = (evnt) => {
@@ -276,6 +276,7 @@ class Player extends Component {
         switch (evnt.code) {
             case "ArrowLeft":
                 this.movePlayer(-1 * this.playerSpeed, 0)
+                this.moveEnemies()
                 break;
 
             case "ArrowUp":
