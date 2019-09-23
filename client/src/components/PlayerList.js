@@ -18,7 +18,11 @@ const playerInfo = (player) => {
 class PlayerList extends Component {
 
     state = {
-        players: []
+        players: [],
+        newPlayer: {
+            name: '',
+            score: 0
+        }
     }
 
     componentDidMount() {
@@ -33,6 +37,24 @@ class PlayerList extends Component {
                 this.setState({ players: res })
             })
     }
+
+    handlePlayerInput = (evnt) => {
+        //copy from state
+        let newPlayer = { ...this.state.newPlayer }
+
+        //modify state
+        newPlayer[evnt.target.name] = evnt.target.value
+
+        //set state
+        this.setState({ newPlayer })
+    }
+
+    handleSubmit = (evnt) => {
+        evnt.preventDefault();
+
+        this.savePlayer(this.state.newPlayer)
+    }
+
     savePlayer = (newPlayer) =>
         fetch('/api/players',
             {
@@ -45,16 +67,19 @@ class PlayerList extends Component {
         return (
             <div>
 
-                <h1>Player List</h1>
+                <h1 className="title">Invaders of Space</h1>
                 {this.state.players
                     .map(players => {
                         playerInfo(players)
                     })}
-                {/* <h1 className="container title">Invaders of Space</h1>
+                <h2>Player List</h2>
 
-                <input type="text" name="name" placeholder="Username" />
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" name="name" placeholder="Username" />
 
-                <input type="submit" value="Submit" /> */}
+                    <input type="submit" value="Submit" />
+                </form>
+
             </div>
         )
     }

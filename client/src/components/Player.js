@@ -11,20 +11,78 @@ const renderPlayer = (player) => (
 )
 
 const renderEnemy = (enemy) => (
-    <div
-        className="enemy"
-        style={enemy.position}>
+    <div className="enemyContainer">
+        <div
+            className="enemy"
+            style={enemy[0].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[1].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[2].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[3].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[4].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[5].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[6].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[7].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[8].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[9].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[10].position}
+        >
+        </div>
+        <div
+            className="enemy"
+            style={enemy[11].position}
+        >
+        </div>
     </div>
 )
 
-const multipleEnemies = (enemy) => {
-    document.getElementsByClassName('enemy').innerHTML = ""
-    for (let i = 0; i < enemy.length; i++) {
-        document.getElementsByClassName('enemy').innerHTML +=
-            `<div class='enemy' style='left:${enemy[i].left}px; 
-        top:${enemy[i].top}px'></div>`
-    }
-}
+// const multipleEnemies = (enemy) => {
+//     document.getElementsByClassName('enemy').innerHTML = ""
+//     for (let i = 0; i < enemy.length; i++) {
+//         document.getElementsByClassName('enemy').innerHTML +=
+//             `<div class='enemy' style='left:${enemy[i].left}px; 
+//         top:${enemy[i].top}px'></div>`
+//     }
+// }
 
 // const renderEnemy = (enemy) => (
 //     <div>
@@ -113,66 +171,80 @@ class Player extends Component {
         },
         missiles: [],
 
-        enemy: {
-            position: {
+        enemy: [
+            {
+              position: {
                 top: 50,
                 left: 100
-            }
-        },
-        enemy2: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy3: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy4: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy5: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy6: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy7: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy8: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy9: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        },
-        enemy10: {
-            position: {
-                top: 0,
-                left: 0
-            }
-        }
+              }
+            },
+            {
+              position: {
+                top: 50,
+                left: 200
+              }
+            },
+            {
+              position: {
+                top: 50,
+                left: 300
+              }
+            },
+            {
+              position: {
+                top: 50,
+                left: 400
+              }
+            },
+            {
+              position: {
+                top: 50,
+                left: 500
+              }
+            },
+            {
+              position: {
+                top: 50,
+                left: 600
+              }
+            },
+            {
+                position: {
+                  top: 150,
+                  left: 100
+                }
+              },
+              {
+                position: {
+                  top: 150,
+                  left: 200
+                }
+              },
+              {
+                position: {
+                  top: 150,
+                  left: 300
+                }
+              },
+              {
+                position: {
+                  top: 150,
+                  left: 400
+                }
+              },
+              {
+                position: {
+                  top: 150,
+                  left: 500
+                }
+              },
+              {
+                position: {
+                  top: 150,
+                  left: 600
+                }
+              }
+          ]
     }
 
     movePlayer(dx, dy) {

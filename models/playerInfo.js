@@ -36,7 +36,7 @@ const PlayerCollection = mongoose.model('Player', PlayerSchema)
  */
 
 const getPlayers = () => {
-  console.log('test')
+  
   return PlayerCollection.find();
 }
 
@@ -46,7 +46,7 @@ const getPlayer = (playerId) => {
 }
 
 const addPlayer = (player) => {
-  console.log('add player')
+  
   return PlayerCollection.create(player)
 }
 

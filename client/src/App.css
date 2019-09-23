@@ -35,6 +35,11 @@ body {
   margin: 0 auto;
 }
 
+.enemyContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .player {
   height: 50px;
   width : 50px;
