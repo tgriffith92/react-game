@@ -32,14 +32,21 @@ const playerRouter = express.Router()
  * TODO: Put all request handlers here
  */
 
-playerRouter.get('/', (req,res) => {
-    playerApi.getPlayerInfo()
-        .then(playerInfo => 
-            res.render('react-invaders', {playerInfo}))
+playerRouter.get('/', (req, res) => {
+    playerApi.getPlayers()
+        .then(playerInfo =>
+            res.send(playerInfo))
 })
 
-playerRouter.post('/', (req,res) => {
-    playerApi.addPlayerInfo(req.body)
+playerRouter.get('/:playerId', (req, res) => {
+    playerApi.getPlayer(req.params.playerId)
+        .then((singlePlayer) => {
+            res.send(singlePlayer)
+        })
+})
+
+playerRouter.post('/', (req, res) => {
+    playerApi.addPlayer(req.body)
         .then(() => res.redirect('/'))
 })
 
@@ -49,5 +56,5 @@ playerRouter.post('/', (req,res) => {
  *
  */
 module.exports = {
-  playerRouter
+    playerRouter
 }

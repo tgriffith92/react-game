@@ -17,7 +17,7 @@ const mongoose = require('./connection.js')
  * NOTE: skip this if you are not using mongoose
  *
  */
-const PlayerInfoSchema = new mongoose.Schema({
+const PlayerSchema = new mongoose.Schema({
  name: String,
  score: String
 })
@@ -28,24 +28,26 @@ const PlayerInfoSchema = new mongoose.Schema({
  * NOTE: skip this if you are not using mongoose
  *
  */
-const PlayerCollection = mongoose.model('Player', PlayerInfoSchema)
+const PlayerCollection = mongoose.model('Player', PlayerSchema)
 
 /* Step 4
  *
  *
  */
 
-const getPlayerInfo =  () => {
+const getPlayers =  () => {
   console.log('test')
-    PlayerCollection.find();
+   return PlayerCollection.find();
 }
 
-const addPlayerInfo = () => {
+const getPlayer = (playerId) => {
+
+  return PlayerCollection.findById(playerId)
+}
+
+const addPlayer = (player) => {
     console.log('add player')
-  return PlayerCollection.create({
-    name: "",
-    score: 0
-  })
+  return PlayerCollection.create(player)
 }
 
 /* Step 5
@@ -54,6 +56,7 @@ const addPlayerInfo = () => {
  * object
  */
 module.exports = {
-  getPlayerInfo,
-  addPlayerInfo
+  getPlayers,
+  getPlayer,
+  addPlayer
 }
