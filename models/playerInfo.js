@@ -50,6 +50,10 @@ const addPlayer = (player) => {
   return PlayerCollection.create(player)
 }
 
+const deletePlayer = (playerId) => {
+  return PlayerCollection.findByIdAndDelete(playerId)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
@@ -58,5 +62,6 @@ const addPlayer = (player) => {
 module.exports = {
   getPlayers,
   getPlayer,
-  addPlayer
+  addPlayer,
+  deletePlayer
 }

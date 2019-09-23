@@ -50,6 +50,13 @@ playerRouter.post('/', (req, res) => {
         .then(() => res.redirect('/'))
 })
 
+playerRouter.delete('/:playerId', (req, res) => {
+    playerApi.deletePlayer(req.params.playerId)
+    .then(() => {
+        res.redirect('/')
+    })
+})
+
 /* Step 5
  *
  * Export the router from the file.
