@@ -9,4 +9,4 @@ The target end user is anyone that enjoys classic video games and wants to play 
 [Project Board](https://github.com/tgriffith92/react-game/projects/1)
 
 **ERD**
-![ERD]()
+![ERD](https://github.com/tgriffith92/react-game/blob/master/client/public/ERD.png)
