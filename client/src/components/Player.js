@@ -75,70 +75,6 @@ const renderEnemy = (enemy) => (
     </div>
 )
 
-// const multipleEnemies = (enemy) => {
-//     document.getElementsByClassName('enemy').innerHTML = ""
-//     for (let i = 0; i < enemy.length; i++) {
-//         document.getElementsByClassName('enemy').innerHTML +=
-//             `<div class='enemy' style='left:${enemy[i].left}px; 
-//         top:${enemy[i].top}px'></div>`
-//     }
-// }
-
-// const renderEnemy = (enemy) => (
-//     <div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//         <div
-//             className="enemy"
-//             style={enemy.position}
-//         >
-//         </div>
-//     </div>
-// )
-
 const renderMissile = (missile) => (
     <div
         className="missile"
@@ -160,6 +96,26 @@ const makeNewMissile = (missiles, player) => {
     return missiles
 }
 
+// const collisionDetection = () => {
+
+//    for(let collision = 0; collision < enemy.length; collision++) {
+//     for(let missile = 0; missile < missiles.length; missile++) {
+//         if(
+//             missiles[missile].left >= collision[enemy].left &&
+//             missiles[missile].left <= collision[enemy]
+//         ) {
+
+//         }
+//     }
+//    }
+// return !(
+//     ((enemy.top + enemy.height) < missile.top) ||
+//     (enemy.top > (missile.top + missile.height)) ||
+//     ((enemy.left + enemy.width) < missile.left) ||
+//     (enemy.left > (missile.left + missile.width))
+// )
+// }
+
 class Player extends Component {
     //set the position of the player
     state = {
@@ -173,78 +129,78 @@ class Player extends Component {
 
         enemy: [
             {
-              position: {
-                top: 50,
-                left: 100
-              }
-            },
-            {
-              position: {
-                top: 50,
-                left: 200
-              }
-            },
-            {
-              position: {
-                top: 50,
-                left: 300
-              }
-            },
-            {
-              position: {
-                top: 50,
-                left: 400
-              }
-            },
-            {
-              position: {
-                top: 50,
-                left: 500
-              }
-            },
-            {
-              position: {
-                top: 50,
-                left: 600
-              }
+                position: {
+                    top: 50,
+                    left: 100
+                }
             },
             {
                 position: {
-                  top: 150,
-                  left: 100
+                    top: 50,
+                    left: 200
                 }
-              },
-              {
+            },
+            {
                 position: {
-                  top: 150,
-                  left: 200
+                    top: 50,
+                    left: 300
                 }
-              },
-              {
+            },
+            {
                 position: {
-                  top: 150,
-                  left: 300
+                    top: 50,
+                    left: 400
                 }
-              },
-              {
+            },
+            {
                 position: {
-                  top: 150,
-                  left: 400
+                    top: 50,
+                    left: 500
                 }
-              },
-              {
+            },
+            {
                 position: {
-                  top: 150,
-                  left: 500
+                    top: 50,
+                    left: 600
                 }
-              },
-              {
+            },
+            {
                 position: {
-                  top: 150,
-                  left: 600
+                    top: 150,
+                    left: 100
                 }
-              }
-          ]
+            },
+            {
+                position: {
+                    top: 150,
+                    left: 200
+                }
+            },
+            {
+                position: {
+                    top: 150,
+                    left: 300
+                }
+            },
+            {
+                position: {
+                    top: 150,
+                    left: 400
+                }
+            },
+            {
+                position: {
+                    top: 150,
+                    left: 500
+                }
+            },
+            {
+                position: {
+                    top: 150,
+                    left: 600
+                }
+            }
+        ]
     }
 
     movePlayer(dx, dy) {
@@ -257,6 +213,19 @@ class Player extends Component {
 
         this.setState({ player })
     }
+
+    // moveEnemies() {
+    //     let enemy = { ...this.state.enemy }
+    //     // for (let i = 0; i < enemy.length; i++) {
+    //     //     enemy[i].position = {
+    //     //         top: 5 + enemy[i].position.top 
+    //     //     }
+    //     // }
+
+        
+
+    //     this.setState({ enemy })
+    // }
 
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeyPress)
@@ -290,26 +259,17 @@ class Player extends Component {
     moveMissiles() {
         const missiles = this.state.missiles.map(({ top, left }) => ({ left, top: top - this.missleSpeed }))
         this.setState({ missiles })
-        console.log(missiles)
     }
 
     moveEnemies() {
-        const enemies = this.state.enemies.map(({ top, left }) => ({ left, top: top + this.enemySpeed }))
-        this.setState({ enemies })
+        const enemy = this.state.enemy.map(({ top, left }) => ({ left, top: top + this.enemySpeed }))
+        this.setState({ enemy })
+        console.log(enemy)
     }
 
     onTick() {
-        this.moveMissiles()
+        this.moveEnemies()
     }
-
-    // collision(enemy, missile) {
-    //     return !(
-    //         ((enemy.top + enemy.height) < missile.top) ||
-    //         (enemy.top > (missile.top + missile.height)) ||
-    //         ((enemy.left + enemy.width) < missile.left) ||
-    //         (enemy.left > (missile.left + missile.width))
-    //     )
-    // }
 
     handleKeyPress = (evnt) => {
         //move the player in the proper direction by 30px

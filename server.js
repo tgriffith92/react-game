@@ -56,9 +56,9 @@ app.use('/api/players', playerRouter)
  * add catch all route to serve up the built react app for any request not made to our
  * /api/... routes.
  */
-app.get('/*', (req, res) => {
-    res.sendFile(`${__dirname}/client/build/index.html`)
-})
+// app.get('/*', (req, res) => {
+//     res.sendFile(`${__dirname}/client/build/index.html`)
+// })
 
 /* Step 6
  *

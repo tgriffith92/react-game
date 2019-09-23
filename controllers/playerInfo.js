@@ -47,13 +47,13 @@ playerRouter.get('/:playerId', (req, res) => {
 
 playerRouter.post('/', (req, res) => {
     playerApi.addPlayer(req.body)
-        .then(() => res.redirect('/'))
+        .then(newPlayer => res.send(newPlayer))
 })
 
 playerRouter.delete('/:playerId', (req, res) => {
     playerApi.deletePlayer(req.params.playerId)
         .then(() => {
-            res.redirect('/')
+            res.sendStatus(200)
         })
 })
 
