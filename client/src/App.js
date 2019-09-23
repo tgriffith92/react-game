@@ -9,6 +9,7 @@ class App extends Component {
     return(
         <div className="container">
           <Player />
+          <div className="score"></div>
         </div>
       
     )

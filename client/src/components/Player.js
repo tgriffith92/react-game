@@ -115,8 +115,8 @@ class Player extends Component {
 
         enemy: {
             position: {
-                top: 0,
-                left: 0
+                top: 50,
+                left: 100
             }
         },
         enemy2: {

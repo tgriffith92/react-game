@@ -57,6 +57,14 @@ body {
   position: absolute;
 }
 
+.score {
+  height: 50px;
+  width: 100px;
+  color: black;
+  background-color: azure;
+  margin-left: 500px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
