@@ -42,6 +42,10 @@ body {
   flex-wrap: wrap;
 }
 
+.gameData {
+  display: flex;
+}
+
 .player {
   height: 50px;
   width : 50px;

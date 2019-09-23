@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
 
 
-class PlayerList extends Component {
+class GameData extends Component {
 
     state = {
-        newPlayer: {
-            name: '',
-            score: 0
+        newGame: {
+            color: '',
+            level: 1
         }
-    }
-
-    handlePlayerInput = (evnt) => {
-        //copy from state
-        let newPlayer = { ...this.state.newPlayer }
-
-        //modify state
-        newPlayer[evnt.target.name] = evnt.target.value
-
-        //set state
-        this.setState({ newPlayer })
     }
 
     handleGameInput = (evnt) => {
@@ -35,31 +24,18 @@ class PlayerList extends Component {
     handleSubmit = (evnt) => {
         evnt.preventDefault();
 
-        this.props.savePlayer(this.state.newPlayer)
-    }
-
-    handleGameSubmit = (evnt) => {
-        evnt.preventDefault();
-
         this.props.saveGame(this.state.newGame)
     }
 
     render() {
         return (
-            <div>
+            <div className="gameData">
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handlePlayerInput}
-                        name="name" placeholder="Username" />
-                    <input type="text" onChange={this.handlePlayerInput}
-                        name="score" placeholder="0" readOnly />
-
-                    <input type="submit" value="Submit" />
-                </form>
-                <form onSubmit={this.handleGame}>
+        
                     <input type="text" onChange={this.handleGameInput}
-                        name="name" placeholder="Username" />
+                        name="color" placeholder="red" />
                     <input type="text" onChange={this.handleGameInput}
-                        name="score" placeholder="0" readOnly />
+                        name="level" placeholder="3" />
 
                     <input type="submit" value="Submit" />
                 </form>
@@ -69,4 +45,4 @@ class PlayerList extends Component {
 
 }
 
-export default PlayerList;
+export default GameData;

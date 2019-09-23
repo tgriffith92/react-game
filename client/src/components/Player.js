@@ -276,7 +276,6 @@ class Player extends Component {
         switch (evnt.code) {
             case "ArrowLeft":
                 this.movePlayer(-1 * this.playerSpeed, 0)
-                this.moveEnemies()
                 break;
 
             case "ArrowUp":
