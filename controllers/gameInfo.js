@@ -39,6 +39,11 @@ gameRouter.get('/:gameId', (req, res) => {
         })
 })
 
+gameRouter.post('/', (req, res) => {
+    gameApi.addGame(req.body)
+        .then(newGame => res.send(newGame))
+})
+
 /* Step 5
  *
  * Export the router from the file.

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Player from './components/Player';
-import PlayerList from './components/PlayerList';
+import GameData from './components/GameData';
 import './App.css';
 
-
+const getGameById = (gameId) => {
+  fetch(`/api/players/${gameId}`)
+  .then(res => res.json())
+  .catch(() => [])
+}
 
 const sendNewPlayerToServer = (newPlayer) =>
   fetch('/api/players',
@@ -32,10 +36,20 @@ const playerInfo = (player) => {
   )
 }
 
+const gameInfo = (game) => {
+  return (
+    <h3>
+      {game.color} -
+      {game.level}
+    </h3>
+  )
+}
+
 class App extends Component {
 
   state = {
-    player: { name: "N/A", score: 0 }
+    player: { name: "N/A", score: 0 },
+    game: {color: 'black', level: 3}
   }
 
   savePlayer = (newPlayer) => {
@@ -47,8 +61,11 @@ class App extends Component {
     return (
       <div>
         <h1 className="title">Invaders of Space</h1>
+        <h2>Player</h2>
         {playerInfo(this.state.player)}
-        <PlayerList savePlayer={this.savePlayer} />
+        <h2>Game level</h2>
+        {gameInfo(this.state.game)}
+        <GameData savePlayer={this.savePlayer} />
         <div className="container">
 
           <Player />

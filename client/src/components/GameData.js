@@ -21,12 +21,28 @@ class PlayerList extends Component {
         this.setState({ newPlayer })
     }
 
+    handleGameInput = (evnt) => {
+        //copy from state
+        let newGame = { ...this.state.newGame }
+
+        //modify state
+        newGame[evnt.target.name] = evnt.target.value
+
+        //set state
+        this.setState({ newGame })
+    }
+
     handleSubmit = (evnt) => {
         evnt.preventDefault();
 
         this.props.savePlayer(this.state.newPlayer)
     }
 
+    handleGameSubmit = (evnt) => {
+        evnt.preventDefault();
+
+        this.props.saveGame(this.state.newGame)
+    }
 
     render() {
         return (
@@ -39,7 +55,14 @@ class PlayerList extends Component {
 
                     <input type="submit" value="Submit" />
                 </form>
+                <form onSubmit={this.handleGame}>
+                    <input type="text" onChange={this.handleGameInput}
+                        name="name" placeholder="Username" />
+                    <input type="text" onChange={this.handleGameInput}
+                        name="score" placeholder="0" readOnly />
 
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         )
     }

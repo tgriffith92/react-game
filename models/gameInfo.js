@@ -41,12 +41,17 @@ const getGameById = (gameId) => {
   return GameCollection.findById(gameId)
 }
 
+const addGame = (game) => {
+  
+  return GameCollection.create(game)
+}
+
 /* Step 5
  *
  * TODO: export all functions from this file by adding their names as keys to this
  * object
  */
 module.exports = {
-  getGame,
-  getGameById
+  getGameById,
+  addGame
 }
