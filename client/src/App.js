@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Player from './components/Player';
+import Landing from './components/Landing';
 import './App.css';
 
 

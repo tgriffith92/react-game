@@ -36,11 +36,16 @@ const PlayerCollection = mongoose.model('Player', PlayerInfoSchema)
  */
 
 const getPlayerInfo =  () => {
+  console.log('test')
     PlayerCollection.find();
 }
 
-const addPlayerInfo = (info) => {
-    PlayerCollection.create(info);
+const addPlayerInfo = () => {
+    console.log('add player')
+  return PlayerCollection.create({
+    name: "",
+    score: 0
+  })
 }
 
 /* Step 5

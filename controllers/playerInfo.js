@@ -34,15 +34,16 @@ const playerRouter = express.Router()
 
 playerRouter.get('/', (req,res) => {
     playerApi.getPlayerInfo()
-        .then(playerInfo => res.send(playerInfo))
+        .then(playerInfo => 
+            res.render('react-invaders', {playerInfo}))
 })
 
 playerRouter.post('/', (req,res) => {
     playerApi.addPlayerInfo(req.body)
-        .then(() => res.sendStatus(200))
+        .then(() => res.redirect('/'))
 })
 
-/* Step 6
+/* Step 5
  *
  * Export the router from the file.
  *
