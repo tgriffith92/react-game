@@ -64,7 +64,7 @@ class App extends Component {
   addToScore = () => {
     let player = this.state.player
 
-    player.score += 100;
+    player.score = Number(player.score) + 100;
 
     this.setState({ player })
   }
@@ -96,6 +96,7 @@ class App extends Component {
 
         <PlayerInfo savePlayer={this.savePlayer} />
         <GameData saveGame={this.saveGame} />
+        <input type="submit" value="Load Save"/>
         <div className="container">
 
           <Player />

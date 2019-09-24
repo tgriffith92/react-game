@@ -270,10 +270,6 @@ class Player extends Component {
     onTick() {
         this.moveMissiles()
     }
-    
-    onEnemyTick() {
-        this.moveEnemies()
-    }
 
     handleKeyPress = (evnt) => {
         //move the player in the proper direction by 30px
