@@ -33,8 +33,8 @@ class PlayerInfo extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" onChange={this.handlePlayerInput}
                         name="name" placeholder="Username" />
-                    <input type="text" onChange={this.handlePlayerInput}
-                        name="score" placeholder="0" readOnly />
+                    <input type="number" onChange={this.handlePlayerInput}
+                        name="score" value="0" readOnly />
 
                     <input type="submit" value="Submit" />
                 </form>
