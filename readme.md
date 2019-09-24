@@ -12,4 +12,4 @@ The target end user is anyone that enjoys classic video games and wants to play 
 ![ERD](https://github.com/tgriffith92/react-game/blob/master/client/public/ERD-Image.png)
 
 **Wireframe**
-![Wireframe]()
+![Wireframe](https://github.com/tgriffith92/react-game/blob/master/client/public/Wireframe.png)
