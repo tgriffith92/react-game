@@ -35,7 +35,7 @@ const playerInfo = (player) => {
   return (
     <h3>
       {player.name} -
-        {player.score}
+        {Number(player.score)}
     </h3>
   )
 }

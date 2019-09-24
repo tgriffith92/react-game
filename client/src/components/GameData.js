@@ -15,7 +15,7 @@ class GameData extends Component {
         let newGame = { ...this.state.newGame }
 
         //modify state
-        newGame[evnt.target.name] = evnt.target.value
+        newGame[evnt.target.color] = evnt.target.value
 
         //set state
         this.setState({ newGame })
