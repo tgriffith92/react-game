@@ -214,18 +214,15 @@ class Player extends Component {
         this.setState({ player })
     }
 
-    // moveEnemies() {
-    //     let enemy = { ...this.state.enemy }
-    //     // for (let i = 0; i < enemy.length; i++) {
-    //     //     enemy[i].position = {
-    //     //         top: 5 + enemy[i].position.top 
-    //     //     }
-    //     // }
-
-        
-
-    //     this.setState({ enemy })
-    // }
+    moveEnemies() {
+        let enemy = { ...this.state.enemy }
+        for (let i = 0; i < enemy.length; i++) {
+            enemy[i].position = {
+                top: 5 + enemy[i].position.top 
+            }
+        }
+        this.setState({ enemy })
+    }
 
     componentDidMount() {
         document.addEventListener('keydown', this.handleKeyPress)
@@ -261,11 +258,11 @@ class Player extends Component {
         this.setState({ missiles })
     }
 
-    moveEnemies() {
-        const enemy = this.state.enemy.map(({ top, left }) => ({ left, top: top + this.enemySpeed }))
-        this.setState({ enemy })
-        
-    }
+    // moveEnemies() {
+    //     const enemy = this.state.enemy.map(({ position: { top }, position: { left } }) =>
+    //         ({ position: { left }, position: { top: top } + this.enemySpeed }))
+    //     this.setState({ enemy })
+    // }
 
     onTick() {
         this.moveMissiles()
@@ -289,6 +286,7 @@ class Player extends Component {
             case "ArrowDown":
                 this.movePlayer(0, this.playerSpeed)
                 break;
+
             case "Space":
                 this.setState({
                     missiles: makeNewMissile([...this.state.missiles], this.state.player)

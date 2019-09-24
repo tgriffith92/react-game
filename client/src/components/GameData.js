@@ -31,7 +31,7 @@ class GameData extends Component {
         return (
             <div className="gameData">
                 <form onSubmit={this.handleSubmit}>
-        
+
                     <input type="text" onChange={this.handleGameInput}
                         name="color" placeholder="red" />
                     <input type="text" onChange={this.handleGameInput}
